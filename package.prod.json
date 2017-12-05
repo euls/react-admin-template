@@ -1,0 +1,25 @@
+{
+  "name": "microservice-node-consumer-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV='production' node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://scm.craftsmen.org.cn/scm/git/microservice-node-consumer-tutorial"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cross-env": "^5.1.1",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.4.5"
+  }
+}
