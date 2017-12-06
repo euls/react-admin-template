@@ -22,7 +22,7 @@ export default class HomeApp extends Component {
                                 <Icon type='dashboard' />
                                 <span>工作台</span>
                             </Menu.Item>
-                            <SubMenu key="permissions" title={<span><Icon type="team" /><span>权限管理</span></span>}>
+                            <SubMenu key="permissions" title={<span><Icon type="team" /><span>系统安全</span></span>}>
                                 <Menu.Item key="5">
                                     <Icon type="user" />
                                     <span>用户管理</span>
