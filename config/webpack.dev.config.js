@@ -47,7 +47,8 @@ const clientConfig = merge(commonConfig, {
                                 "import",
                                 {
                                     "libraryName": "antd",
-                                    "style": "css"
+                                    "libraryDirectory": "es",
+                                    "style": true
                                 }
                             ]
                         ]

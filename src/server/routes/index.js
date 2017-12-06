@@ -1,7 +1,5 @@
-import controller from './controller';
-import service from './service';
+import rest from './rest';
 
 module.exports = function (app) {
-  controller(app);
-  service(app);
+  rest(app);
 };

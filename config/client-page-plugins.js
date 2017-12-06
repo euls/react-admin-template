@@ -7,5 +7,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
         filename: 'index.html',
         chunks: ['home'],
         hash: true
+    }),
+    new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, '..', 'src/client/templates/login.html'),
+        filename: 'login.html',
+        chunks: ['login'],
+        hash: true
     })
  ] 

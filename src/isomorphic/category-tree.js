@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 import { Tree } from 'antd';
 import image from '../client//images/pic.jpg';
-import 'font-awesome/css/font-awesome.css';
 import '../client/less/about.less';
 
 
