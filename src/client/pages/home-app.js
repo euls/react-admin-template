@@ -23,9 +23,18 @@ export default class HomeApp extends Component {
                                 <span>工作台</span>
                             </Menu.Item>
                             <SubMenu key="permissions" title={<span><Icon type="team" /><span>权限管理</span></span>}>
-                                <Menu.Item key="5">用户管理</Menu.Item>
-                                <Menu.Item key="6">角色管理</Menu.Item>
-                                <Menu.Item key="7">权限管理</Menu.Item>
+                                <Menu.Item key="5">
+                                    <Icon type="user" />
+                                    <span>用户管理</span>
+                                </Menu.Item>
+                                <Menu.Item key="6">
+                                    <Icon type="team" />
+                                    <span>角色管理</span>
+                                </Menu.Item>
+                                <Menu.Item key="7">
+                                    <Icon type="key" />
+                                    <span>权限管理</span>
+                                </Menu.Item>
                             </SubMenu>
                             <Menu.Item key='9'>
                                 <Icon type='book' />
