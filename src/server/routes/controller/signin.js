@@ -13,6 +13,11 @@ export default passport => {
         failureRedirect: '/signin',
         failureFlash: true
     }));
+
+    // router.post('/login', bodyParser.urlencoded({extended: false}), (req, res)=>{
+    //     console.log(req.body);
+    //     res.json({});
+    // });
     
     router.get('/signout', (req, res) => {
         req.logout();

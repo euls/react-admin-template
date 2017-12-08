@@ -26,6 +26,7 @@ export default server => {
     passport.use('local', new LocalStrategy({
         passReqToCallback: true
     }, (req, username, password, done) => {
+        console.log(username, password);
         if ('root' !== username) {
             return done(null, false, req.flash('message', 'User Not found.'));
         }
