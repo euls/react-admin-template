@@ -3,4 +3,4 @@ import {render, hydrate} from 'react-dom';
 import CategoryTree from '../isomorphic/category-tree';
 import './less/about.less';
 
-hydrate(<CategoryTree roots={[]}/>, document.getElementById('tree'));
+hydrate(<CategoryTree roots={[]}/>, document.getElementById('app'));
