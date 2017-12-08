@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import '../less/auth.less';
+import '../less/signin.less';
 
 const FormItem = Form.Item;
 
