@@ -1,7 +1,7 @@
 import rest from './rest';
 import controller from './controller';
 
-module.exports = function (app) {
+module.exports = function (app, passport) {
   rest(app);
-  controller(app);
+  controller(app, passport);
 };

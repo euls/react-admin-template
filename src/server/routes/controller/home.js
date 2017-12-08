@@ -1,8 +1,9 @@
 import express from 'express';
+import {isAuthenticated} from '../../security';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', isAuthenticated, (req, res) => {
     res.render('home');
 });
 

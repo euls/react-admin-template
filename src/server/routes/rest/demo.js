@@ -9,5 +9,9 @@ router.get('/demo', (req, res, next) => {
         version: '0.0.1'
     });
 });
+router.post('/demo', (req, res, next) => {
+    console.log(req.body);
+    res.json(req.body);
+});
 
 export default router;

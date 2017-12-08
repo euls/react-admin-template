@@ -32,14 +32,14 @@ module.exports = [
     }),
     // home & login & about
     new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, '..', 'src/server/views/login.hbs'),
-        filename: 'views/login.hbs',
+        template: path.resolve(__dirname, '..', 'src/server/views/signin.hbs'),
+        filename: 'views/signin.hbs',
         inject: true,
         excludeAssets: [/server.js/]
     }),
     new HtmlWebpackIncludeAssetsPlugin({
-        files: ['views/login.hbs'],
-        assets: isDev ? ['js/login.js'] : ['css/login.css','js/login.js'],
+        files: ['views/signin.hbs'],
+        assets: isDev ? ['js/signin.js'] : ['css/signin.css','js/signin.js'],
         append: false,
         hash: true
     }),

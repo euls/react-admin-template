@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import handlebars from 'express-handlebars';
 import routes from './routes';
+import initSecurity from './security/config';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -26,7 +27,10 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(cookieParser());
 
-routes(server);
+// initialize security context
+const passport = initSecurity(server);
+
+routes(server, passport);
 
 const port = (process.env.PORT || 3000);
 
