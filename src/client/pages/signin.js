@@ -12,25 +12,26 @@ class NormalLoginForm extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values);
         
-        const {username,password} = values;
-        fetch('/login', {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          method: "POST",
-          body: `username=${username}&password=${password}`
-        }).then(res => {
-          return res.text();
-        }).then(text => {
-          console.log(text);
-        });
+        // const {username,password} = values;
+        // fetch('/login', {
+        //   headers: {
+        //     'Content-Type': 'application/x-www-form-urlencoded'
+        //   },
+        //   method: "POST",
+        //   body: `username=${username}&password=${password}`
+        // }).then(res => {
+        //   return res.text();
+        // }).then(text => {
+        //   console.log(text);
+        // });
+        document.getElementById("form1").submit();
       }
     });
   }
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <Form  onSubmit={this.handleSubmit} className="login-form" action='/login' method='POST' ref='form'>
+      <Form  onSubmit={this.handleSubmit} className="login-form" action='/login' method='POST' id='form1'>
         <FormItem>
           {getFieldDecorator('username', {
             rules: [{ required: true, message: '请输入你的用户名！' }],
