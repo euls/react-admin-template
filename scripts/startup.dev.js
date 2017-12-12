@@ -7,6 +7,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../config/webpack.dev.config';
 import clientEntries from '../config/client-entries';
+import browserSync from 'browser-sync';
 
 const entryPoint = path.resolve(__dirname, '../', 'build/server/server.js');
 
@@ -198,6 +199,14 @@ async function start() {
 
     const port = process.env.PORT || 3000;
     const serverInstance = server.listen(port, () => {
+        browserSync.init({
+            open: false,
+            ui: false,
+            notify: false,
+            proxy: 'localhost:3000',
+            files: ['../src/server/views/**'],
+            port: 8080
+        });
         console.log(`Development server is listening on: http://localhost:${port}`);
     });
 }

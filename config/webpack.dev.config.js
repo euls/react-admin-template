@@ -14,7 +14,9 @@ var serverPagePlugins = require('./server-page-plugins');
 var commonConfig = {
     devtool: 'source-map',
     output: {
-        publicPath: 'http://localhost:3000/'
+        publicPath: 'http://localhost:3000/',
+        devtoolModuleFilenameTemplate: '[absolute-resource-path]',
+        devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
     },
     module: {
         rules: [

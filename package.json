@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV='production' node server/server.js",
     "dev": "cross-env NODE_ENV='dev' babel-node --presets env,stage-0 scripts/startup.dev.js",
-    "dev:debug": "cross-env NODE_ENV='dev' babel-node --inspect scripts/startup.dev.js --presets env,stage-0 --source-maps",
+    "dev:debug": "cross-env NODE_ENV='dev' babel-node --inspect src/server/server.js --presets env,stage-0 --source-maps",
     "build:debug": "cross-env NODE_ENV='dev' webpack --config config/webpack.dev.config.js --progress --colors",
     "build": "cross-env NODE_ENV='production' webpack -p --config config/webpack.prod.config.js --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +28,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "browser-sync": "^2.18.13",
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
