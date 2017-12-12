@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-fetch';
 import { Tree } from 'antd';
-import image from '../client//images/pic.jpg';
+import image from '../client/images/pic.jpg';
 import '../client/less/about.less';
 
 
