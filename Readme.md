@@ -116,13 +116,16 @@ temp:
             "type": "node",
             "request": "launch",
             "name": "Debug local",
-            "program": "${workspaceFolder}/build/server/server.js",
+            "program": "${workspaceFolder}/src/server/server.js",
             "sourceMaps": true,
             "restart": true,
             "env": {
                 "NODE_ENV": "dev"
             },
-            "preLaunchTask": "build:debug"
+            "preLaunchTask": "build:debug",
+            "outFiles": [
+                "${workspaceFolder}/build/server/server.js"
+            ]
         }
     ]
 }
