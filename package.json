@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV='production' node server/server.js",
     "dev": "cross-env NODE_ENV='dev' babel-node --presets env,stage-0 scripts/startup.dev.js",
+    "build:debug": "cross-env NODE_ENV='dev' webpack --config config/webpack.dev.config.js --progress --colors",
     "build": "cross-env NODE_ENV='production' webpack -p --config config/webpack.prod.config.js --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

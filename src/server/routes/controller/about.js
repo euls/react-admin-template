@@ -8,7 +8,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
     const html = renderToString(<CategoryTree roots={[]}/>);
     res.render('about', {
-        html: html
+        html: html,
+        name: 'Shawn'
     });
 });
 
