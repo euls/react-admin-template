@@ -50,7 +50,11 @@ const clientConfig = merge(commonConfig, {
                                     "libraryName": "antd",
                                     "style": "css"
                                 }
-                            ]
+                            ],
+                            "syntax-dynamic-import",
+                            ["import-inspector", {
+                                "serverSideRequirePath": true
+                            }]
                         ]
                     }
                 }],
@@ -118,7 +122,16 @@ const clientConfig = merge(commonConfig, {
                 'blink-class',
                 /^e2e-/
             ]
-        })
+        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: "vendor",
+        //     // filename: "vendor.js"
+        //     // (给 chunk 一个不同的名字)
+        
+        //     minChunks: Infinity,
+        //     // (随着 entry chunk 越来越多，
+        //     // 这个配置保证没其它的模块会打包进 vendor chunk)
+        //   })
     ].concat(clientPagePlugins)
 });
 

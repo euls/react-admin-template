@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
+import {Switch, Route} from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
+import Loadable from 'react-loadable';
+import Loading from '../components/loading';
+
+const EmptyComponent = Loadable({
+  loader: () => import('./empty'),
+  loading: Loading
+});
 
 const { Header, Sider, Content, Footer } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -42,7 +50,11 @@ export default class HomeApp extends Component {
                             </Menu.Item>
                         </Menu>
                     </Sider>
-                    <Content>main content</Content>
+                    <Content>
+                        <Switch>
+                            <Route exact path='/' component={EmptyComponent}/>
+                        </Switch>
+                    </Content>
                 </Layout>
             </Layout>
         );

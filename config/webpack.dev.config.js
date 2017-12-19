@@ -20,7 +20,7 @@ var commonConfig = {
     },
     module: {
         rules: [
-            
+
         ]
     },
     plugins: [
@@ -52,7 +52,11 @@ const clientConfig = merge(commonConfig, {
                                     "libraryDirectory": "es",
                                     "style": true
                                 }
-                            ]
+                            ],
+                            "syntax-dynamic-import",
+                            ["import-inspector", {
+                                "serverSideRequirePath": true
+                            }]
                         ]
                     }
                 }],
