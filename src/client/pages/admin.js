@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Link} from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
 import Loadable from 'react-loadable';
 import Loading from '../components/loading';
@@ -28,7 +28,7 @@ export default class HomeApp extends Component {
                         <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
                             <Menu.Item key='1'>
                                 <Icon type='dashboard' />
-                                <span>工作台</span>
+                                <Link to='/dashboard' style={{ display: 'initial' }}>工作台</Link>
                             </Menu.Item>
                             <SubMenu key="permissions" title={<span><Icon type="team" /><span>系统安全</span></span>}>
                                 <Menu.Item key="5">
@@ -53,6 +53,7 @@ export default class HomeApp extends Component {
                     <Content>
                         <Switch>
                             <Route exact path='/' component={EmptyComponent}/>
+                            <Route exact path='/dashboard' component={EmptyComponent}/>
                         </Switch>
                     </Content>
                 </Layout>
