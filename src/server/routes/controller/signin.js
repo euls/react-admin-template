@@ -8,15 +8,18 @@ const router = express.Router();
 
 export default passport => {
     router.get('/signin', (req, res) => {
-        const html = renderToString(<LoginForm/>);
+        const html = renderToString(<LoginForm error={req.query.error}/>);
         res.render('signin', {
-            html: html
+            html: html,
+            initialState: JSON.stringify({
+                error: req.query.error
+            })
         });
     });
     
     router.post('/login', bodyParser.urlencoded({extended: false}), passport.authenticate('local', {
         successRedirect: '/',
-        failureRedirect: '/signin',
+        failureRedirect: '/signin?error',
         failureFlash: true
     }));
 
