@@ -9,6 +9,11 @@ const EmptyComponent = Loadable({
   loading: Loading
 });
 
+const PermissionsManager = Loadable({
+    loader: () => import('./security/permissions-manager'),
+    loading: Loading
+});
+
 const { Header, Sider, Content, Footer } = Layout;
 const SubMenu = Menu.SubMenu;
 
@@ -22,7 +27,7 @@ export default class HomeApp extends Component {
     render() {
         return (
             <Layout style={styles.fullHeight}>
-                <Header>header</Header>
+                <Header className='header'><div className='logout'><a href='/signout'>注销</a></div></Header>
                 <Layout>
                     <Sider collapsible={true}>
                         <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
@@ -41,7 +46,7 @@ export default class HomeApp extends Component {
                                 </Menu.Item>
                                 <Menu.Item key="7">
                                     <Icon type="key" />
-                                    <span>权限管理</span>
+                                    <Link to='/security/permissions' style={{ display: 'initial' }}>权限管理</Link>
                                 </Menu.Item>
                             </SubMenu>
                             <Menu.Item key='9'>
@@ -54,6 +59,7 @@ export default class HomeApp extends Component {
                         <Switch>
                             <Route exact path='/' component={EmptyComponent}/>
                             <Route exact path='/dashboard' component={EmptyComponent}/>
+                            <Route exact path='/security/permissions' component={PermissionsManager}/>
                         </Switch>
                     </Content>
                 </Layout>
