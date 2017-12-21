@@ -1,9 +1,9 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import { hydrate } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import AdminApp from './pages/admin';
 import './less/home.less';
 
-render(<HashRouter>
+hydrate(<BrowserRouter>
     <AdminApp></AdminApp>
-</HashRouter>, document.getElementById('app'));
+</BrowserRouter>, document.getElementById('app'));
