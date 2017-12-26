@@ -4,15 +4,27 @@ import { Link } from 'react-router-dom';
 
 const SubMenu = Menu.SubMenu;
 
+function cascadeOpenKeys(pathname) {
+    const paths = pathname.split('/').filter(item => '' !== item);
+    let openKeys = [];
+    paths.forEach((item, idx) => {
+        const entry = paths.slice(0, idx);
+        openKeys.push('/' + entry.join('/'));
+    });
+    return openKeys;
+}
+
 export default class AppMenu extends Component {
     render() {
+        const { location } = this.props;
+        const openKeys = cascadeOpenKeys(location.pathname);
         return (
-            <Menu {...this.props} theme='light' mode='inline' defaultSelectedKeys={['1']}>
-                <Menu.Item key='1'>
+            <Menu {...this.props} theme='light' mode='inline' defaultSelectedKeys={[location.pathname]} defaultOpenKeys={openKeys} selectedKeys={[location.pathname]}>
+                <Menu.Item key='/dashboard'>
                     <Icon type='dashboard' />
                     <span><Link to='/dashboard'>工作台</Link></span>
                 </Menu.Item>
-                <SubMenu key="permissions" title={<span><Icon type="team" /><span>系统安全</span></span>}>
+                <SubMenu key="/security" title={<span><Icon type="team" /><span>系统安全</span></span>}>
                     <Menu.Item key="5">
                         <Icon type="user" />
                         <span>用户管理</span>
@@ -21,7 +33,7 @@ export default class AppMenu extends Component {
                         <Icon type="team" />
                         <span>角色管理</span>
                     </Menu.Item>
-                    <Menu.Item key="7">
+                    <Menu.Item key="/security/permissions">
                         <Icon type="key" />
                         <Link to='/security/permissions' style={{ display: 'initial' }}>权限管理</Link>
                     </Menu.Item>
