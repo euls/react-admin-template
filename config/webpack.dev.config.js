@@ -11,6 +11,8 @@ var clientEntries = require('./client-entries');
 var clientPagePlugins = require('./client-page-plugins');
 var serverPagePlugins = require('./server-page-plugins');
 
+var theme = require('./theme');
+
 var commonConfig = {
     devtool: 'source-map',
     output: {
@@ -68,7 +70,12 @@ const clientConfig = merge(commonConfig, {
             },
             {
                 test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader']
+                use: ['style-loader', 'css-loader', {
+                    loader: 'less-loader',
+                    options: {
+                        modifyVars: theme
+                    }
+                }]
             },
             {
                 test: /\.png|jpg|bmp$/,

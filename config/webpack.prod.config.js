@@ -13,6 +13,8 @@ var clientEntries = require('./client-entries');
 var clientPagePlugins = require('./client-page-plugins');
 var serverPagePlugins = require('./server-page-plugins');
 
+var theme = require('./theme');
+
 var commonConfig = {
     output: {
         publicPath: 'http://localhost:3000/'
@@ -50,7 +52,8 @@ const clientConfig = merge(commonConfig, {
                                 "import",
                                 {
                                     "libraryName": "antd",
-                                    "style": "css"
+                                    "libraryDirectory": "es",
+                                    "style": true
                                 }
                             ],
                             "syntax-dynamic-import",
@@ -73,7 +76,12 @@ const clientConfig = merge(commonConfig, {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader", 'less-loader']
+                    use: ["css-loader", {
+                        loader: 'less-loader',
+                        options: {
+                            modifyVars: theme
+                        }
+                    }]
                 })
             },
             {
