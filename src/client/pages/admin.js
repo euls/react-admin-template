@@ -33,7 +33,7 @@ export default class HomeApp extends Component {
                         <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
                             <Menu.Item key='1'>
                                 <Icon type='dashboard' />
-                                <Link to='/dashboard' style={{ display: 'initial' }}>工作台</Link>
+                                <span><Link to='/dashboard'>工作台</Link></span>
                             </Menu.Item>
                             <SubMenu key="permissions" title={<span><Icon type="team" /><span>系统安全</span></span>}>
                                 <Menu.Item key="5">
