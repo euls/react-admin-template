@@ -14,7 +14,7 @@ module.exports = [
     }),
     new HtmlWebpackIncludeAssetsPlugin({
         files: ['views/errors/404.hbs'],
-        assets: isDev ? ['js/404.js'] : ['css/404.css','js/404.js'],
+        assets: isDev ? ['js/404.js'] : ['css/404.css', 'js/404.js'],
         append: false,
         hash: true
     }),
@@ -26,7 +26,7 @@ module.exports = [
     }),
     new HtmlWebpackIncludeAssetsPlugin({
         files: ['views/errors/500.hbs'],
-        assets: isDev ? ['js/500.js'] : ['css/500.css','js/500.js'],
+        assets: isDev ? ['js/500.js'] : ['css/500.css', 'js/500.js'],
         append: false,
         hash: true
     }),
@@ -39,7 +39,7 @@ module.exports = [
     }),
     new HtmlWebpackIncludeAssetsPlugin({
         files: ['views/signin.hbs'],
-        assets: isDev ? ['js/signin.js'] : ['css/signin.css','js/signin.js'],
+        assets: isDev ? ['js/signin.js'] : ['css/signin.css', 'js/commons.js', 'js/signin.js'],
         append: false,
         hash: true
     }),
@@ -51,7 +51,7 @@ module.exports = [
     }),
     new HtmlWebpackIncludeAssetsPlugin({
         files: ['views/home.hbs'],
-        assets: isDev ? ['js/home.js'] : ['css/home.css','js/home.js'],
+        assets: isDev ? ['js/home.js'] : ['css/home.css', 'js/commons.js', 'js/home.js'],
         append: false,
         hash: true
     }),
@@ -63,7 +63,7 @@ module.exports = [
     }),
     new HtmlWebpackIncludeAssetsPlugin({
         files: ['views/about.hbs'],
-        assets: isDev ? ['js/about.js'] : ['css/about.css','js/about.js'],
+        assets: isDev ? ['js/about.js'] : ['css/about.css', 'js/about.js'],
         append: false,
         hash: true
     })
