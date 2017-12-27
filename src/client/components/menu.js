@@ -17,9 +17,9 @@ function cascadeOpenKeys(pathname) {
 export default class AppMenu extends Component {
     render() {
         const { location } = this.props;
-        const openKeys = cascadeOpenKeys(location.pathname);
+        const defaultOpenKeys = cascadeOpenKeys(location.pathname);
         return (
-            <Menu {...this.props} theme='light' mode='inline' defaultSelectedKeys={[location.pathname]} defaultOpenKeys={openKeys} selectedKeys={[location.pathname]}>
+            <Menu {...this.props} theme='light' mode='inline' defaultSelectedKeys={[location.pathname]} defaultOpenKeys={defaultOpenKeys} selectedKeys={[location.pathname]}>
                 <Menu.Item key='/dashboard'>
                     <Icon type='dashboard' />
                     <span><Link to='/dashboard'>工作台</Link></span>
