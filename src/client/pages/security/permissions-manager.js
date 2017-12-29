@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import { Table, Button, Input, Icon } from 'antd';
+import Loadable from 'react-loadable';
+import Loading from '../../components/loading';
+
+const PermissionEditor = Loadable({
+    loader: () => import('./permission-editor'),
+    loading: Loading
+});
 
 const dataSource = [{
     id: '1',
