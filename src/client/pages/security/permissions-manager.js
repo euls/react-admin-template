@@ -47,7 +47,7 @@ const columns = [{
 {
     title: '权限',
     dataIndex: 'name',
-    key: 'name',
+    key: 'name'
 }
 ];
 
@@ -106,6 +106,7 @@ export default class PermissionsManager extends Component {
                 </div>
                 <Table 
                 dataSource={dataSource} 
+                rowKey={'id'}
                 columns={columns} 
                 rowSelection={rowSelection} 
                 expandedRowRender={record => <p style={{ margin: 0 }}>{record.description}</p>}
