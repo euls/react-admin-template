@@ -29,7 +29,7 @@ export default class LoadableDashboard extends React.Component {
 }
 ```
 That's all there is to it! Simply use LoadableDashboard (or whatever you named your component) and it will automatically be loaded and rendered when you use it in your application. The loader option is a function which actually loads the component, and loading is a placeholder component to show while the real component is loading.
-## Code Splitting and Server-Sice Rendering
+## Code Splitting and Server-Side Rendering
 [react-loadable](https://github.com/thejameskyle/react-loadable) includes [a guide for server-side rendering](https://github.com/thejameskyle/react-loadable/tree/6902cc87f618446c54daa85d8fecec6836c9461a#server-side-rendering). All you should need to do is include [babel-plugin-import-inspector](https://github.com/thejameskyle/react-loadable/tree/6902cc87f618446c54daa85d8fecec6836c9461a#babel-plugin-import-inspector) in your .babelrc and server-side rendering should just work™. Here is an example .babelrc file:
 ```
 {

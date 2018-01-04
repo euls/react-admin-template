@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Button, Input, Icon } from 'antd';
+import { Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Loading from '../../components/loading';
 
@@ -85,7 +86,7 @@ const searchStyle = {
 }
 
 const Separator = (props) => {
-    let {size} = props;
+    let { size } = props;
     if (!size) {
         size = 1
     }
@@ -100,25 +101,34 @@ const Separator = (props) => {
 export default class PermissionsManager extends Component {
     render = () => {
         return (
-            <div style={containerStyle}>
-                <h1 style={titleStyle}>系统权限管理</h1>
-                <div style={actionStyle}>
-                    <Button type='primary'><Icon type='plus'/>创建权限</Button>
-                    <Separator size={0.5}/>
-                    <Button type='primary'><Icon type='edit'/>修改权限</Button>
-                    <Separator/>
-                    <Button type='danger'><Icon type='minus'/>删除权限</Button>
-                    <Separator/>
-                    <Input.Search enterButton={true} style={searchStyle} placeholder={'使用权限名称进行模糊查询'}></Input.Search>
-                </div>
-                <Table 
-                dataSource={dataSource} 
-                rowKey={'id'}
-                columns={columns} 
-                rowSelection={rowSelection} 
-                expandedRowRender={record => <p style={{ margin: 0 }}>{record.description}</p>}
-                bordered/>
-            </div>
+            <Switch>
+                <Route path='/' render={() => {
+                    return (
+                        <div style={containerStyle}>
+                            <h1 style={titleStyle}>系统权限管理</h1>
+                            <div style={actionStyle}>
+                                <Button type='primary'><Icon type='plus' />创建权限</Button>
+                                <Separator size={0.5} />
+                                <Button type='primary'><Icon type='edit' />修改权限</Button>
+                                <Separator />
+                                <Button type='danger'><Icon type='minus' />删除权限</Button>
+                                <Separator />
+                                <Input.Search enterButton={true} style={searchStyle} placeholder={'使用权限名称进行模糊查询'}></Input.Search>
+                            </div>
+                            <Table
+                                dataSource={dataSource}
+                                rowKey={'id'}
+                                columns={columns}
+                                rowSelection={rowSelection}
+                                expandedRowRender={record => <p style={{ margin: 0 }}>{record.description}</p>}
+                                bordered />
+                        </div>
+                    );
+                }} />
+                <Route path='/security/permissions/create' render = {()=>{
+                    return (<h1>Create Permission</h1>);
+                }}/>
+            </Switch>
         );
     }
 }
