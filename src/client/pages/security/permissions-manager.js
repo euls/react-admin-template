@@ -102,7 +102,7 @@ export default class PermissionsManager extends Component {
     render = () => {
         return (
             <Switch>
-                <Route path='/' render={() => {
+                <Route exact path='/security/permissions' render={() => {
                     return (
                         <div style={containerStyle}>
                             <h1 style={titleStyle}>系统权限管理</h1>

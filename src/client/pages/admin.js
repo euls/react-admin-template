@@ -42,7 +42,7 @@ export default withRouter((props) => {
                         <Switch>
                             <Route exact path='/' component={EmptyComponent} />
                             <Route exact path='/dashboard' component={EmptyComponent} />
-                            <Route exact path='/security/permissions' component={PermissionsManager} />
+                            <Route path='/security/permissions' component={PermissionsManager} />
                         </Switch>
                     </Content>
                 </Layout>
