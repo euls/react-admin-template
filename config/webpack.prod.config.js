@@ -111,8 +111,6 @@ const clientConfig = merge(commonConfig, {
                 test: /\.(html)$/,
                 use: [{
                     loader: 'html-loader'
-                }, {
-                    loader: 'optimize-css-classnames-html'
                 }]
             }
         ]
@@ -126,13 +124,13 @@ const clientConfig = merge(commonConfig, {
             },
             comments: false
         }),
-        new OptimizeCSSClassnamesPlugin({
-            prefix: '_',
-            ignore: [
-                'blink-class',
-                /^e2e-/
-            ]
-        }),
+        // new OptimizeCSSClassnamesPlugin({
+        //     prefix: '_',
+        //     ignore: [
+        //         'blink-class',
+        //         /^e2e-/
+        //     ]
+        // }),
         new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
             filename: "js/commons.js",

@@ -1,4 +1,4 @@
-FROM node:boron
+FROM node:8.11.1
 
 EXPOSE 80
 
