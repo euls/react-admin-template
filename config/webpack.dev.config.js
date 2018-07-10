@@ -14,7 +14,6 @@ var serverPagePlugins = require('./server-page-plugins');
 var theme = require('./theme');
 
 var commonConfig = {
-    devtool: 'source-map',
     output: {
         publicPath: 'http://localhost:3000/',
         devtoolModuleFilenameTemplate: '[absolute-resource-path]',
@@ -33,6 +32,7 @@ var commonConfig = {
 };
 
 const clientConfig = merge(commonConfig, {
+    devtool: 'cheap-module-eval-source-map',
     target: 'web',
     entry: clientEntries,
     output: {
@@ -107,6 +107,7 @@ const clientConfig = merge(commonConfig, {
 });
 
 const serverConfig = merge(commonConfig, {
+    devtool: 'source-map',
     target: 'node',
     entry: {
         server: path.resolve(__dirname, '..', 'src/server/server.js')
