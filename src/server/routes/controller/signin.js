@@ -13,7 +13,8 @@ export default passport => {
             html: html,
             initialState: JSON.stringify({
                 error: req.query.error
-            })
+            }),
+            layout: false
         });
     });
     
